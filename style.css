@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: initial;
+    padding: 20px;
+    background: linear-gradient(180deg, rgb(227, 169, 218) 0%, rgb(64, 135, 142)100%);
+    flex-direction: row;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 4rem;
+    color: #333;
+}
+
+.filter-buttons {
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: #555;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+    background: #e84393;
+}
+
+.gallery {
+    width: 80%;
+    margin:  100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 35px;
+} 
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
+    align-items: center;
+    display: flex;
+    height: 400px;
+    margin: auto;
+    width: 100%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.07)  ;
+    filter: grayscale(0%);
+    border-radius: 20px;
+    box-shadow: 0 10px  rgba(68,77,136,0.2);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 5px solid #0d0e5c;
+    border-radius: 10px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.lightbox-controls {
+    margin-top: 20px;
+}
+
+.lightbox-controls button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background: #e84393;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.lightbox-controls button:hover {
+    background: #c73276;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .filter-buttons button {
+        padding: 8px 12px;
+        margin: 3px;
+    }
+}
+
